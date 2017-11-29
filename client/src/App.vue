@@ -6,8 +6,20 @@
 </template>
 
 <script>
+import db from './firebase'
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    addPlayers () {
+      db.ref('players/').set({
+        username: 'AhmadNizar',
+        score: 0
+      })
+    }
+  },
+  created () {
+    this.addPlayers()
+  }
 }
 </script>
 
