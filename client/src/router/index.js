@@ -9,11 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: Register
-    },
-    {
-      path: '/register',
+      name: 'Register',
       component: Register
     }
   ]
