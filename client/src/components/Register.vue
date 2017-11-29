@@ -32,6 +32,14 @@ export default {
         username: this.username,
         score: 0
       })
+      .then(res => {
+        localStorage.setItem('username', this.username)
+        this.$router.push({ name: 'MainBoard' })
+        console.log('masuk sini')
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
   }
 }
