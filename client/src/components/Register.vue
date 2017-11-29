@@ -33,7 +33,7 @@ export default {
         score: 0
       })
       .then(() => {
-        console.log(res)
+        console.log('masuk sini')
       })
     }
   }
