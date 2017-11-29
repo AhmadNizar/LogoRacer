@@ -32,6 +32,9 @@ export default {
         username: this.username,
         score: 0
       })
+      .then(() => {
+        console.log(res)
+      })
     }
   }
 }
