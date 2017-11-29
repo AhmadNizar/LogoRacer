@@ -16,7 +16,7 @@ export default {
   width: 108px;
   height: 54px;
   position: absolute;
-  top: 50%;
+  top: -30%;
   left: 50%;
   margin-top: -27px;
   margin-left: -54px;
