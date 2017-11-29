@@ -11,6 +11,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.17.1",
+    "clearbit": "^1.3.3",
+    "fs": "0.0.1-security",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -61,6 +64,9 @@
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
+  },
+  "node": {
+    "fs": "empty"
   },
   "browserslist": [
     "> 1%",
