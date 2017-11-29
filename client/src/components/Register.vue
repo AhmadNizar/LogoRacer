@@ -1,10 +1,10 @@
 <template>
   <div class="row col-md-4 col-md-offset-4">
     <div id="tengah">
-      <form>
-          <label styl>Input name player</label>
+      <form @submit.prevent="toPlay">
+          <label style="color:#999;">Input name player</label>
           <div style="text-align: center; margin-left: 20%;" class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
+            <input v-model="player" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
           </div>
           <button type="submit" class="btn btn-primary">PLAY</button>
       </form>
@@ -19,6 +19,16 @@ export default {
   name: 'Register',
   components: {
     Loader
+  },
+  data: function () {
+    return {
+      player: ''
+    }
+  },
+  methods: {
+    toPlay () {
+      console.log(this.player)
+    }
   }
 }
 </script>
@@ -43,7 +53,7 @@ body{
   position: relative;
   margin-top: 70%;
   transform: translateY(-50%);
-    }
+}
 h1, h2 {
   font-weight: normal;
 }

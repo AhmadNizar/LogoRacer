@@ -1,3 +1,4 @@
+/* eslint-disable */
 var firebase = require('firebase')
 // Initialize Firebase
 var config = {

@@ -5,26 +5,13 @@
 </template>
 
 <script>
-import Loader from '@/components/Loader'
 import Register from '@/components/Register'
-import db from './firebase'
+// import db from './firebase'
 
 export default {
   name: 'app',
   components: {
-    Loader,
     Register
-  },
-  methods: {
-    addPlayers () {
-      db.ref('players/').set({
-        username: 'AhmadNizar',
-        score: 0
-      })
-    }
-  },
-  created () {
-    this.addPlayers()
   }
 }
 </script>
@@ -35,7 +22,7 @@ export default {
   margin: 0px;
 }
 body {
-  background: #1d0e28;
+  background: #1f1f1f;
 }
 #app {
   /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
