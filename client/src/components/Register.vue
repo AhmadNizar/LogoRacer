@@ -32,6 +32,11 @@ export default {
         username: this.username,
         score: 0
       })
+      .then(snapshot => {
+        localStorage.setItem('username', this.username)
+        console.log(this.username)
+        this.$route.push({name: })
+      })
     }
   }
 }
