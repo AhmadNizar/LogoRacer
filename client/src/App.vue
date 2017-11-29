@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import Loader from '@/components/Loader'
+import Register from '@/components/Register'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Loader,
+    Register
+  }
 }
 </script>
 
 <style>
+*{
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background: #1d0e28;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
