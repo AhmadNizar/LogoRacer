@@ -1,24 +1,38 @@
 <template>
   <div class="row col-md-4 col-md-offset-4">
     <div id="tengah">
-      <form>
+      <div>
           <label styl>Input name player</label>
           <div style="text-align: center; margin-left: 20%;" class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="player" v-model="username">
           </div>
-          <button type="submit" class="btn btn-primary">PLAY</button>
-      </form>
+          <button @click="registerPlayers" class="btn btn-primary">PLAY</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Loader from '@/components/Loader'
+import db from '../firebase'
 
 export default {
   name: 'Register',
   components: {
     Loader
+  },
+  data () {
+    return {
+      username: ''
+    }
+  },
+  methods: {
+    registerPlayers () {
+      db.ref(`players/${this.username}`).set({
+        username: this.username,
+        score: 0
+      })
+    }
   }
 }
 </script>

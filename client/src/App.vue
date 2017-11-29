@@ -7,24 +7,12 @@
 <script>
 import Loader from '@/components/Loader'
 import Register from '@/components/Register'
-import db from './firebase'
 
 export default {
   name: 'app',
   components: {
     Loader,
     Register
-  },
-  methods: {
-    addPlayers () {
-      db.ref('players/').set({
-        username: 'AhmadNizar',
-        score: 0
-      })
-    }
-  },
-  created () {
-    this.addPlayers()
   }
 }
 </script>
