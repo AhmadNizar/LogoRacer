@@ -17,6 +17,12 @@ export default new Router({
     {
       path: '/play',
       component: Play,
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.getItem('username')) {
+          next('/')
+        }
+        next()
+      },
       children: [
         {
           path: '',
