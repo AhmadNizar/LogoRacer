@@ -5,7 +5,7 @@
        <form style="padding-top: 0%;">
          <h3>a mini game</h3>
          <h1>LOGO RACER</h1>
-         
+
         <label style="padding-top:10%; font-size:13px; color:#999;">input player name</label>
         <div class="form-group">
           <input v-model="username" name="player" type="text" class="eightbit-btn" placeholder="player">
@@ -38,19 +38,12 @@ export default {
         username: this.username,
         score: 0
       })
-<<<<<<< HEAD
-      .then(snapshot => {
-        localStorage.setItem('username', this.username)
-        console.log(this.username)
-        this.$route.push({name: })
-=======
       .then(res => {
         localStorage.setItem('username', this.username)
         this.$router.push({ name: 'MainBoard' })
       })
       .catch(err => {
         console.log(err)
->>>>>>> eea3dca18cab324b43ecb1b3dfaeb38bac5e9fcb
       })
     }
   }
