@@ -6,7 +6,9 @@
          <h3>a mini game</h3>
          <h1>LOGO RACER</h1>
 
-        <label style="padding-top:10%; font-size:13px; color:#999;">input player name</label>
+        <label style="padding-top:10%; font-size:13px; color:#999;">
+          <marquee>input player name</marquee>
+        </label>
         <div class="form-group">
           <input v-model="username" name="player" type="text" class="eightbit-btn" placeholder="player">
         </div>

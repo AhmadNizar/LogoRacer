@@ -46,6 +46,7 @@ export default {
     quit () {
       // localStorage.removeItem('username', this.username)
       // this.$router.push({ name: 'Register' })
+      window.location = '/'
     },
     playAgain () {
       // this.$router.push({ name: 'Mainboard' })

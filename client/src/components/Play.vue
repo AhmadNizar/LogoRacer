@@ -3,7 +3,9 @@
     <Modal></Modal>
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <img class="" style="padding:10%;" :src="imageurl"></img>
+        <img style="padding:10%; width: 80%;" :src="imageurl">
+          <!-- <canvas id="mycanvas"></canvas> -->
+        </img>
         <div style="padding-top: 20%;">
           <div class="form-group">
             <input v-model="tebakan" type="text" class="eightbit-btn" placeholder="nama logo">
@@ -13,16 +15,20 @@
       </div>
     </div>
     <div class="col-md-3 leaderboard">
-      <div class="alert alert-warning" role="alert">
+      <div class="alert borderpboard" role="alert">
         <h5 class="alert-heading">Leaderboard!</h5>
-        <hr>
+        <hr style="background: white;">
         <ul style="list-style: none;">
           <li>01</li>
           <li>02</li>
           <li>03</li>
         </ul>
-        <hr>
-        <p style="font-size:13px;" class="mb-0">Whenever you need</p>
+        <hr style="background: white;">
+        <p style="font-size:13px;" class="mb-0">
+          <marquee>
+            PEMENANG UTAMA AKAN MEMENANGKAN LIBURAN KE JEPANG  
+          </marquee>
+        </p>
       </div>
     </div>
   </div>
@@ -47,6 +53,7 @@ export default {
       }],
       tes: '',
       imageurl: '',
+      img: '',
       quizkey: '',
       username: localStorage.getItem('username'),
       score: 0,
@@ -89,7 +96,7 @@ export default {
         }
       }
       if (this.gameOver === true) {
-        console.log('looooooooseeee')
+        // console.log('looooooooseeee')
         $('#myModal').modal('show')
       }
     },
@@ -114,11 +121,30 @@ export default {
     db.ref(`players/${this.username}`).on('value', (resplay) => {
       this.score = resplay.val().score
     })
+
+    // var eightBit = require('8bit')
+    // console.log(eightBit)
+    // var img = new Image()
+    // img = function () {
+    //   eightBit(document.getElementById('mycanvas'), img, 22)
+    // }
+    // img.src = this.imageurl
+    // console.log(img.src)
+  },
+  watch: {
+    // getImg: function () {
+    //   this.img = this.imageurl
+    // }
   }
 }
 </script>
 
 <style scoped>
+.borderpboard{
+  color: #e9ecef;
+  /* background-color: #fff3cd; */
+  border-color: #f8f9fa;
+}
 .leaderboard{
   text-align: left;
   top: 2%;
