@@ -38,7 +38,8 @@ export default {
       tes: '',
       imageurl: '',
       quizkey: '',
-      username: localStorage.getItem('username')
+      username: localStorage.getItem('username'),
+      score: 0
     }
   },
   methods: {
@@ -58,10 +59,10 @@ export default {
       return Math.floor(Math.random() * this.random.length)
     },
     Tebakan () {
-      console.log('masuk sini')
       if (this.tebakan === this.quizkey) {
         this.status = 'Benar'
         this.GetLogo()
+        this.setPlayerScore()
       } else {
         this.status = 'Salah'
       }
@@ -72,9 +73,9 @@ export default {
         name: name
       })
     },
-    setPlayerScore() {
+    setPlayerScore () {
       db.ref(`players/${this.username}`).set({
-        score: 0
+        score: this.score + 10
       })
     }
   },
@@ -84,8 +85,8 @@ export default {
       this.quizkey = response.val().name
     })
 
-    db.ref(`players/${this.username}`).on('value', (response) => {
-      console.log(response.val().name)
+    db.ref(`players/${this.username}`).on('value', (resplay) => {
+      this.score = resplay.val().score
     })
   }
 }
