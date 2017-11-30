@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     registerPlayers () {
+      console.log('masuk sini')
       db.ref(`players/${this.username}`).set({
         username: this.username,
         score: 0
