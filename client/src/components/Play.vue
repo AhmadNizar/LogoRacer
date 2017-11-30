@@ -26,6 +26,20 @@
     </div>
     <div class="col-md-3 leaderboard">
       <router-view/>
+      <div class="alert alert-warning" role="alert">
+        <h5 class="alert-heading">Leaderboard!</h5>
+        <hr>
+        <ul style="list-style: none;">
+          <li>01</li>
+          <li>02</li>
+          <li>03</li>
+        </ul>
+        <hr>
+        <p style="font-size:13px;" class="mb-0">Whenever you need</p>
+      </div>
+      <audio controls autoplay style="display:none;">
+        <source src="../assets/sound/Sum41.mp3">
+      </audio>
     </div>
   </div>
 </template>
@@ -40,13 +54,7 @@ export default {
     return {
       status: '',
       tebakan: '',
-      random: [ 'google.com', 'djarum.com', 'unilever.com', 'bumn.go.id', 'bni.co.id' ],
-      list: [{
-        google: 'google.com',
-        djarum: 'djarum.com',
-        unilever: 'unilever.com',
-        bumn: 'bumn.go.id'
-      }],
+      random: [ 'google.com', 'facebook.com', 'ebay.com', 'twitter.com', 'warnerbros.com', 'playstation.com', 'microsoft.com', 'pepsi.com', 'nike.com', 'starbucks.com', 'nationalgeographic.com', 'apple.com' ],
       tes: '',
       imageurl: '',
       quizkey: '',
