@@ -12,19 +12,8 @@
       </div>
     </div>
     <div class="col-md-3 leaderboard">
-      <div class="alert alert-warning" role="alert">
-        <h5 class="alert-heading">Leaderboard!</h5>
-        <hr>
-        <ul style="list-style: none;">
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-        </ul>
-        <hr>
-        <p style="font-size:13px;" class="mb-0">Whenever you need</p>
-      </div>
+      <router-view/>
     </div>
-
   </div>
 </template>
 
