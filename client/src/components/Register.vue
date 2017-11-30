@@ -4,7 +4,7 @@
       <div @submit.prevent="toPlay">
           <label style="color:#999;">Input name player</label>
           <div style="text-align: center; margin-left: 20%;" class="form-group">
-            <input v-model="player" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
+            <input v-model="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
           </div>
           <button @click="registerPlayers" class="btn btn-primary">PLAY</button>
       </div>
