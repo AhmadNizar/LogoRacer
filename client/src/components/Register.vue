@@ -1,10 +1,10 @@
 <template>
   <div class="row col-md-4 col-md-offset-4">
     <div id="tengah">
-      <div>
-          <label styl>Input name player</label>
+      <div @submit.prevent="toPlay">
+          <label style="color:#999;">Input name player</label>
           <div style="text-align: center; margin-left: 20%;" class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="player" v-model="username">
+            <input v-model="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
           </div>
           <button @click="registerPlayers" class="btn btn-primary">PLAY</button>
       </div>
@@ -32,10 +32,19 @@ export default {
         username: this.username,
         score: 0
       })
+<<<<<<< HEAD
       .then(snapshot => {
         localStorage.setItem('username', this.username)
         console.log(this.username)
         this.$route.push({name: })
+=======
+      .then(res => {
+        localStorage.setItem('username', this.username)
+        this.$router.push({ name: 'MainBoard' })
+      })
+      .catch(err => {
+        console.log(err)
+>>>>>>> eea3dca18cab324b43ecb1b3dfaeb38bac5e9fcb
       })
     }
   }
@@ -62,7 +71,7 @@ body{
   position: relative;
   margin-top: 70%;
   transform: translateY(-50%);
-    }
+}
 h1, h2 {
   font-weight: normal;
 }
