@@ -3,7 +3,9 @@
     <Modal></Modal>
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <img class="" style="padding:10%;" :src="imageurl"></img>
+        <img style="padding:10%; width: 80%;" :src="imageurl">
+          <!-- <canvas id="mycanvas"></canvas> -->
+        </img>
         <div style="padding-top: 20%;">
           <div class="form-group">
             <input v-model="tebakan" type="text" class="eightbit-btn" placeholder="nama logo">
@@ -43,6 +45,7 @@ export default {
       random: [ 'google.com', 'facebook.com', 'ebay.com', 'twitter.com', 'warnerbros.com', 'playstation.com', 'microsoft.com', 'pepsi.com', 'nike.com', 'starbucks.com', 'nationalgeographic.com', 'apple.com' ],
       tes: '',
       imageurl: '',
+      img: '',
       quizkey: '',
       username: localStorage.getItem('username'),
       score: 0,
@@ -89,7 +92,7 @@ export default {
         }
       }
       if (this.gameOver === true) {
-        console.log('looooooooseeee')
+        // console.log('looooooooseeee')
         $('#myModal').modal('show')
       }
     },
@@ -114,11 +117,30 @@ export default {
     db.ref(`players/${this.username}`).on('value', (resplay) => {
       this.score = resplay.val().score
     })
+
+    // var eightBit = require('8bit')
+    // console.log(eightBit)
+    // var img = new Image()
+    // img = function () {
+    //   eightBit(document.getElementById('mycanvas'), img, 22)
+    // }
+    // img.src = this.imageurl
+    // console.log(img.src)
+  },
+  watch: {
+    // getImg: function () {
+    //   this.img = this.imageurl
+    // }
   }
 }
 </script>
 
 <style scoped>
+.borderpboard{
+  color: #e9ecef;
+  /* background-color: #fff3cd; */
+  border-color: #f8f9fa;
+}
 .leaderboard{
   text-align: left;
   top: 2%;
