@@ -1,8 +1,8 @@
 <template>
-  <div id="myModal" class="modal-body">
+  <div id="myModal" class="modal fade modal-body" style="position: absolute; padding-top: 15%;">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-12">
+        <div style="padding-bottom: 2%;" class="col-sm-12">
           <div class="row">
             <div class="col-4 col-sm-3">
             </div>
@@ -16,21 +16,21 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 ml-auto">.
-          scoore
+        <div style="padding-bottom: 5%; color: white; font-size: 18px;" class="col-md-12 ml-auto">
+          your scoore is ...
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
           <div class="row">
-            <div class="col-4 col-sm-4">
-              <a class="eightbit-btn eightbit-btn--proceed">Play Game</a>
+            <div class="col-4 col-sm-3">
             </div>
-            <div class="col-4 col-sm-4">
-               <a class="eightbit-btn eightbit-btn--proceed">Play Game</a>
+            <div class="col-4 col-sm-6">
+              <a class="eightbit-btn eightbit-btn--proceed">Share</a>
+              <a @click="playAgain" class="eightbit-btn eightbit-btn--proceed">Play Again</a>
+              <a @click="quit" class="eightbit-btn eightbit-btn--proceed">Quit</a>
             </div>
-            <div class="col-4 col-sm-4">
-               <a class="eightbit-btn eightbit-btn--proceed">Play Game</a>
+            <div class="col-4 col-sm-3">
             </div>
           </div>
         </div>
@@ -41,7 +41,16 @@
 
 <script>
 export default {
-  name: 'Modal'
+  name: 'Modal',
+  methods: {
+    quit () {
+      // localStorage.removeItem('username', this.username)
+      // this.$router.push({ name: 'Register' })
+    },
+    playAgain () {
+      // this.$router.push({ name: 'Mainboard' })
+    }
+  }
 }
 </script>
 

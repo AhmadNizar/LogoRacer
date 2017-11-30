@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Modal></Modal>
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <img class="" style="padding:10%;" :src="imageurl"></img>
@@ -20,6 +21,7 @@
 <script>
 import axios from 'axios'
 import db from '../firebase'
+import Modal from './Modal'
 
 export default {
   data () {
@@ -41,6 +43,9 @@ export default {
       nyawa: 3,
       gameOver: false
     }
+  },
+  components: {
+    Modal
   },
   methods: {
     GetLogo () {
@@ -72,6 +77,10 @@ export default {
           console.log('game over')
           this.gameOver = true
         }
+      }
+      if (this.gameOver === true) {
+        console.log('looooooooseeee')
+        $('#myModal').modal('show')
       }
     },
     setFirebase (imgUrl, name) {
