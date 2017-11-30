@@ -24,6 +24,7 @@
         <p style="font-size:13px;" class="mb-0">Whenever you need</p>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -47,7 +48,9 @@ export default {
       imageurl: '',
       quizkey: '',
       username: localStorage.getItem('username'),
-      score: 0
+      score: 0,
+      nyawa: 3,
+      gameOver: false
     }
   },
   methods: {
@@ -73,6 +76,13 @@ export default {
         this.setPlayerScore()
       } else {
         this.status = 'Salah'
+        this.nyawa -= 1
+        console.log('salah')
+        console.log(this.nyawa)
+        if (this.nyawa === 0) {
+          console.log('game over')
+          this.gameOver = true
+        }
       }
     },
     setFirebase (imgUrl, name) {
