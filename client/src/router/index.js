@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Register from '@/components/Register'
 import Play from '@/components/Play'
+import LeaderBoard from '@/components/LeaderBoard'
 
 Vue.use(Router)
 
@@ -16,7 +17,19 @@ export default new Router({
     {
       path: '/play',
       component: Play,
-      name: 'MainBoard'
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.getItem('username')) {
+          next('/')
+        }
+        next()
+      },
+      children: [
+        {
+          path: '',
+          component: LeaderBoard,
+          name: 'MainBoard'
+        }
+      ]
     }
   ]
 })

@@ -44,12 +44,11 @@ export default {
   name: 'Modal',
   methods: {
     quit () {
-      // localStorage.removeItem('username', this.username)
-      // this.$router.push({ name: 'Register' })
+      localStorage.removeItem('username')
       window.location = '/'
     },
     playAgain () {
-      // this.$router.push({ name: 'Mainboard' })
+      //
     }
   }
 }

@@ -11,25 +11,23 @@
             <input v-model="tebakan" type="text" class="eightbit-btn" placeholder="nama logo">
           </div>
           <a class="eightbit-btn eightbit-btn--proceed" @click="Tebakan">Tebak</a>
+          <audio ref="true">
+            <source src="../assets/sound/Coin.wav" type="audio/ogg">
+          </audio>
+          <audio ref="false">
+            <source src="../assets/sound/horse.ogg" type="audio/ogg">
+          </audio>
+          <audio ref="gameover">
+            <source src="../assets/sound/Die.wav" type="audio/ogg">
+          </audio>
         </div>
       </div>
     </div>
     <div class="col-md-3 leaderboard">
-      <div class="alert borderpboard" role="alert">
-        <h5 class="alert-heading">Leaderboard!</h5>
-        <hr style="background: white;">
-        <ul style="list-style: none;">
-          <li>01</li>
-          <li>02</li>
-          <li>03</li>
-        </ul>
-        <hr style="background: white;">
-        <p style="font-size:13px;" class="mb-0">
-          <marquee>
-            PEMENANG UTAMA AKAN MEMENANGKAN LIBURAN KE JEPANG  
-          </marquee>
-        </p>
-      </div>
+      <router-view/>
+      <audio controls autoplay style="display:none;">
+        <source src="../assets/sound/Sum41.mp3">
+      </audio>
     </div>
   </div>
 </template>
@@ -44,13 +42,7 @@ export default {
     return {
       status: '',
       tebakan: '',
-      random: [ 'google.com', 'djarum.com', 'unilever.com', 'bumn.go.id', 'bni.co.id' ],
-      list: [{
-        google: 'google.com',
-        djarum: 'djarum.com',
-        unilever: 'unilever.com',
-        bumn: 'bumn.go.id'
-      }],
+      random: [ 'google.com', 'facebook.com', 'ebay.com', 'twitter.com', 'warnerbros.com', 'playstation.com', 'microsoft.com', 'pepsi.com', 'nike.com', 'starbucks.com', 'nationalgeographic.com', 'apple.com' ],
       tes: '',
       imageurl: '',
       img: '',
@@ -58,7 +50,8 @@ export default {
       username: localStorage.getItem('username'),
       score: 0,
       nyawa: 3,
-      gameOver: false
+      gameOver: false,
+      sounds: ''
     }
   },
   components: {
@@ -81,17 +74,20 @@ export default {
       return Math.floor(Math.random() * this.random.length)
     },
     Tebakan () {
-      if (this.tebakan === this.quizkey) {
-        this.status = 'Benar'
+      if (this.tebakan.toLowerCase() === this.quizkey.toLowerCase()) {
+        this.tebakan = ''
+        this.$refs.true.play()
         this.GetLogo()
         this.setPlayerScore()
       } else {
         this.status = 'Salah'
+        this.$refs.false.play()
         this.nyawa -= 1
         console.log('salah')
         console.log(this.nyawa)
         if (this.nyawa === 0) {
           console.log('game over')
+          this.$refs.gameover.play()
           this.gameOver = true
         }
       }
