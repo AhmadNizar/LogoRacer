@@ -25,7 +25,6 @@
       </div>
       <audio controls autoplay style="display:none;">
         <source src="../assets/sound/Sum41.mp3">
-        Your browser does not support the audio element.
       </audio>
     </div>
   </div>
@@ -39,13 +38,7 @@ export default {
     return {
       status: '',
       tebakan: '',
-      random: [ 'google.com', 'djarum.com', 'unilever.com', 'bumn.go.id', 'bni.co.id' ],
-      list: [{
-        google: 'google.com',
-        djarum: 'djarum.com',
-        unilever: 'unilever.com',
-        bumn: 'bumn.go.id'
-      }],
+      random: [ 'google.com', 'facebook.com', 'ebay.com', 'twitter.com', 'warnerbros.com', 'playstation.com', 'microsoft.com', 'pepsi.com', 'nike.com', 'starbucks.com', 'nationalgeographic.com', 'apple.com' ],
       tes: '',
       imageurl: '',
       quizkey: '',
@@ -53,7 +46,7 @@ export default {
       score: 0,
       nyawa: 3,
       gameOver: false,
-      file: '/assets/Sum41.mp3'
+      sound: ''
     }
   },
   methods: {
@@ -79,6 +72,7 @@ export default {
         this.setPlayerScore()
       } else {
         this.status = 'Salah'
+        this.sound = '../assets/sound/Sum41.mp3'
         this.nyawa -= 1
         console.log('salah')
         console.log(this.nyawa)
