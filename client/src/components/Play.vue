@@ -37,7 +37,8 @@ export default {
       }],
       tes: '',
       imageurl: '',
-      quizkey: ''
+      quizkey: '',
+      username: localStorage.getItem('username')
     }
   },
   methods: {
@@ -70,12 +71,21 @@ export default {
         imgUrl: imgUrl,
         name: name
       })
+    },
+    setPlayerScore() {
+      db.ref(`players/${this.username}`).set({
+        score: 0
+      })
     }
   },
   mounted () {
     db.ref('gamequiz').on('value', (response) => {
       this.imageurl = response.val().imgUrl
       this.quizkey = response.val().name
+    })
+
+    db.ref(`players/${this.username}`).on('value', (response) => {
+      console.log(response.val().name)
     })
   }
 }
