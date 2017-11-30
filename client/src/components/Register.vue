@@ -13,6 +13,9 @@
         <a @click="registerPlayers" class="eightbit-btn eightbit-btn--proceed">Play Game</a>
       </form>
       </div>
+      <audio controls autoplay>
+        <source src="../assets/sound/Sum41.mp3" type="audio/ogg">
+      </audio>
     </div>
   </div>
 </template>

@@ -12,9 +12,15 @@
           <audio ref="true">
             <source src="../assets/sound/Coin.wav" type="audio/ogg">
           </audio>
+          <audio ref="false">
+            <source src="../assets/sound/horse.ogg" type="audio/ogg">
+          </audio>
           <audio ref="gameover">
             <source src="../assets/sound/Die.wav" type="audio/ogg">
           </audio>
+          <audio controls autoplay>
+        <source src="../assets/sound/Sum41.mp3" type="audio/ogg">
+      </audio>
         </div>
       </div>
     </div>
@@ -71,13 +77,14 @@ export default {
       return Math.floor(Math.random() * this.random.length)
     },
     Tebakan () {
-      if (this.tebakan === this.quizkey) {
-        this.status = 'Benar'
+      if (this.tebakan.toLowerCase() === this.quizkey.toLowerCase()) {
+        this.tebakan = ''
         this.$refs.true.play()
         this.GetLogo()
         this.setPlayerScore()
       } else {
         this.status = 'Salah'
+        this.$refs.false.play()
         this.nyawa -= 1
         console.log('salah')
         console.log(this.nyawa)
