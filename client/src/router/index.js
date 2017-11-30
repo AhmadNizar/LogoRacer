@@ -15,8 +15,8 @@ export default new Router({
     },
     {
       path: '/play',
-      name: 'Play',
-      component: Play
+      component: Play,
+      name: 'MainBoard'
     }
   ]
 })

@@ -4,7 +4,7 @@
       <div @submit.prevent="toPlay">
           <label style="color:#999;">Input name player</label>
           <div style="text-align: center; margin-left: 20%;" class="form-group">
-            <input v-model="player" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
+            <input v-model="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
           </div>
           <button @click="registerPlayers" class="btn btn-primary">PLAY</button>
       </div>
@@ -33,11 +33,12 @@ export default {
         username: this.username,
         score: 0
       })
-      .then(() => {
+      .then(res => {
         localStorage.setItem('username', this.username)
-        this.$router.push({
-          name: Play
-        })
+        this.$router.push({ name: 'MainBoard' })
+      })
+      .catch(err => {
+        console.log(err)
       })
     }
   }
