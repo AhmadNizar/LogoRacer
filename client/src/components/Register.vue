@@ -13,7 +13,7 @@
         <a @click="registerPlayers" class="eightbit-btn eightbit-btn--proceed">Play Game</a>
       </form>
       </div>
-      <audio controls autoplay>
+      <audio controls autoplay style="display:none;">
         <source src="../assets/sound/Sum41.mp3" type="audio/ogg">
       </audio>
     </div>
