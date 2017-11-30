@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <img class="" style="padding:30%;" :src="imageurl"></img>
+        <img class="" style="padding:10%;" :src="imageurl"></img>
         <div style="padding-top: 20%;">
           <div class="form-group">
             <input v-model="tebakan" type="text" class="eightbit-btn" placeholder="nama logo">
