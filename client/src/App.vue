@@ -6,7 +6,6 @@
 
 <script>
 import Register from '@/components/Register'
-import db from './firebase'
 
 export default {
   name: 'app',

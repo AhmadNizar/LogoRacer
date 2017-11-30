@@ -1,7 +1,7 @@
 <template>
   <div class="row col-md-4 col-md-offset-4">
     <div id="tengah">
-      <form @submit.prevent="toPlay">
+      <div @submit.prevent="toPlay">
           <label style="color:#999;">Input name player</label>
           <div style="text-align: center; margin-left: 20%;" class="form-group">
             <input v-model="player" type="text" class="form-control" id="exampleInputEmail1" placeholder="player">
