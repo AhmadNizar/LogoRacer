@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <img class="" style="padding:30%;" :src="imageurl">logo disini</img>
+        <img class="" style="padding:30%;" :src="imageurl"></img>
         <div style="padding-top: 20%;">
           <div class="form-group">
             <input type="text" class="eightbit-btn" placeholder="nama logo">

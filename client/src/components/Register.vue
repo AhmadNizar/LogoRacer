@@ -10,7 +10,7 @@
         <div class="form-group">
           <input v-model="username" name="player" type="text" class="eightbit-btn" placeholder="player">
         </div>
-        <a v-on:click="toPlay" class="eightbit-btn eightbit-btn--proceed">Play Game</a>
+        <a @click="registerPlayers" class="eightbit-btn eightbit-btn--proceed">Play Game</a>
       </form>
       </div>
     </div>
