@@ -17,12 +17,11 @@ export default new Router({
     {
       path: '/play',
       component: Play,
-      name: 'MainBoard',
       children: [
         {
           path: '',
           component: LeaderBoard,
-          name: 'LeaderBoard'
+          name: 'MainBoard'
         }
       ]
     }

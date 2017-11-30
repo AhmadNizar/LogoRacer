@@ -38,11 +38,10 @@ export default {
         })
       })
 
-      if(arrPemain.length > 5){
-          this.sortingPemain(arrPemain).splice(5, arrPemain.length - 5 )
-          this.Players = this.sortingPemain(arrPemain)
-      }
-      else{
+      if (arrPemain.length > 5) {
+        this.sortingPemain(arrPemain).splice(5, arrPemain.length - 5)
+        this.Players = this.sortingPemain(arrPemain)
+      } else {
         this.Players = this.sortingPemain(arrPemain)
       }
     })
