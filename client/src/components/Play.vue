@@ -23,15 +23,17 @@
         <hr>
         <p style="font-size:13px;" class="mb-0">Whenever you need</p>
       </div>
+      <audio controls autoplay style="display:none;">
+        <source src="../assets/sound/Sum41.mp3">
+        Your browser does not support the audio element.
+      </audio>
     </div>
-
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import db from '../firebase'
-
 export default {
   data () {
     return {
@@ -50,7 +52,8 @@ export default {
       username: localStorage.getItem('username'),
       score: 0,
       nyawa: 3,
-      gameOver: false
+      gameOver: false,
+      file: '/assets/Sum41.mp3'
     }
   },
   methods: {
