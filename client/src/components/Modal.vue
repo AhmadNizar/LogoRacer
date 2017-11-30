@@ -45,10 +45,10 @@ export default {
   methods: {
     quit () {
       localStorage.removeItem('username')
-      window.location='/'
+      window.location = '/'
     },
     playAgain () {
-      // 
+      //
     }
   }
 }

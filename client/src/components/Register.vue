@@ -6,14 +6,16 @@
          <h3>a mini game</h3>
          <h1>LOGO RACER</h1>
 
-        <label style="padding-top:10%; font-size:13px; color:#999;">input player name</label>
+        <label style="padding-top:10%; font-size:13px; color:#999;">
+          <marquee>input player name</marquee>
+        </label>
         <div class="form-group">
           <input v-model="username" name="player" type="text" class="eightbit-btn" placeholder="player">
         </div>
         <a @click="registerPlayers" class="eightbit-btn eightbit-btn--proceed">Play Game</a>
       </form>
       </div>
-      <audio controls autoplay>
+      <audio controls autoplay style="display:none;">
         <source src="../assets/sound/Sum41.mp3" type="audio/ogg">
       </audio>
     </div>
