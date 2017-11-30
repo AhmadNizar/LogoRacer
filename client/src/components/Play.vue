@@ -5,7 +5,7 @@
         <img class="" style="padding:30%;" :src="imageurl"></img>
         <div style="padding-top: 20%;">
           <div class="form-group">
-            <input type="text" class="eightbit-btn" placeholder="nama logo">
+            <input v-model="tebakan" type="text" class="eightbit-btn" placeholder="nama logo">
           </div>
           <a class="eightbit-btn eightbit-btn--proceed" @click="Tebakan">Tebak</a>
         </div>
